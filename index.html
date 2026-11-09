@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>M. Aminun Najib | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --card: #141414;
+  --red: #ff3434;
+  --white: #f5f5f5;
+  --muted: #929292;
+  --line: #292929;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+/* BACKGROUND */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 80% 20%,
+    rgba(255,52,52,.08),
+    transparent 45%
+  );
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: .035;
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"
+  );
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  height: 76px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(8,8,8,.88);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-size: 11px;
+  color: #aaa;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+.nav-contact {
+  padding: 11px 18px;
+  border: 1px solid var(--red);
+  color: white !important;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 150px 8% 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  animation: fadeUp 1s both;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--red);
+  animation: pulse 1.8s infinite;
+}
+
+.hero-top span:last-child {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(55px, 10vw, 125px);
+  font-weight: 700;
+  line-height: .88;
+  letter-spacing: -7px;
+  text-transform: uppercase;
+  animation: titleReveal 1.2s both;
+}
+
+.hero-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #777;
+}
+
+.hero-title .red {
+  color: var(--red);
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-top: 55px;
+  animation: fadeUp 1.2s .3s both;
+}
+
+.hero-description {
+  max-width: 470px;
+}
+
+.hero-description p {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-description strong {
+  color: white;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 23px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: white;
+  color: black;
+  transform: translateY(-4px);
+}
+
+.btn-outline {
+  border: 1px solid #444;
+  color: white;
+}
+
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.hero-index {
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: right;
+}
+
+.hero-index strong {
+  display: block;
+  font-size: 50px;
+  color: var(--red);
+}
+
+.hero-index span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* DECORATION */
+
+.hero-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: -200px;
+  top: 25%;
+  border-radius: 50%;
+  background: var(--red);
+  opacity: .08;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.hero-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--red),
+    transparent
+  );
+  margin-top: 75px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 15px var(--red);
+  }
+  50% {
+    opacity: .4;
+    box-shadow: 0 0 3px var(--red);
+  }
+}
+
+  /* SECTION GLOBAL */
+
+.section {
+  padding: 110px 8%;
+  position: relative;
+}
+
+.section-label {
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(35px, 6vw, 65px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.section-title span {
+  color: var(--red);
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.profile-card {
+  min-height: 400px;
+  background: linear-gradient(145deg,#1b1b1b,#0d0d0d);
+  border: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: "MN";
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 180px;
+  font-weight: 700;
+  color: rgba(255,52,52,.12);
+}
+
+.profile-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 2px;
+}
+
+.profile-caption strong {
+  display: block;
+  color: white;
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.about-info {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.info-item {
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.info-item small {
+  color: var(--muted);
+  display: block;
+  font-size: 10px;
+  margin-bottom: 9px;
+}
+
+.info-item strong {
+  font-size: 12px;
+}
+
+/* SKILLS */
+
+.skills-section {
+  background: #0d0d0d;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  margin-top: 45px;
+}
+
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 28px;
+  transition: .35s;
+}
+
+.skill-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--red);
+}
+
+.skill-number {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.skill-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.skill-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+
+/* JOURNEY */
+
+.journey {
+  background: #0d0d0d;
+}
+
+.timeline {
+  margin-top: 45px;
+  border-left: 1px solid #444;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 45px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 15px rgba(255,52,52,.5);
+}
+
+.timeline-item small {
+  color: var(--red);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  margin: 12px 0;
+  font-size: 21px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 550px;
+}
+
+/* PHILOSOPHY */
+
+.philosophy {
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.philosophy blockquote {
+  max-width: 850px;
+  margin: auto;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px,5vw,55px);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.philosophy blockquote span {
+  color: var(--red);
+}
+
+.philosophy p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: #0d0d0d;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 60px;
+  margin-top: 45px;
+}
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: .3s;
+}
+
+.contact-item:hover {
+  border-color: var(--red);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,52,52,.1);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.contact-item small {
+  color: var(--muted);
+  display: block;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.contact-item strong {
+  font-size: 13px;
+}
+
+.contact-form {
+  padding: 30px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.contact-form h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  color: #aaa;
+  font-size: 11px;
+  margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: #0c0c0c;
+  border: 1px solid #303030;
+  color: white;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-note {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 35px 8%;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.footer strong {
+  color: var(--red);
+}
+
+  /* SCROLL REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: .8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* TYPING EFFECT */
+
+.typing-line {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 22px;
+  min-height: 20px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background: var(--red);
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: blink .7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* BACK TO TOP */
+
+.back-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--red);
+  background: #151515;
+  color: var(--red);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: .3s;
+}
+
+.back-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-top:hover {
+  background: var(--red);
+  color: white;
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #444;
+  padding: 9px 12px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  transition: color .3s, background .3s;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translate(-50%, 25px);
+  background: #191919;
+  border: 1px solid var(--red);
+  color: white;
+  padding: 15px 22px;
+  font-size: 12px;
+  z-index: 300;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  width: max-content;
+  max-width: 90%;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 900px) {
+
+  .navbar {
+    padding: 0 6%;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .section {
+    padding: 85px 6%;
+  }
+
+  .about-grid {
+    gap: 35px;
+  }
+
+  .contact-grid {
+    gap: 25px;
+  }
+}
+
+@media(max-width: 650px) {
+
+  .navbar {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: #0c0c0c;
+    border-bottom: 1px solid var(--line);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 6% 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: fadeUp .3s both;
+  }
+
+  .nav-links a {
+    padding: 15px 5px;
+    font-size: 12px;
+    border-bottom: 1px solid #222;
+  }
+
+  .nav-links .nav-contact {
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 125px 6% 55px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 13vw, 75px);
+    letter-spacing: -3px;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 35px;
+    gap: 30px;
+  }
+
+  .hero-description p {
+    font-size: 13px;
+  }
+
+  .hero-index {
+    text-align: left;
+  }
+
+  .hero-index strong {
+    font-size: 35px;
+  }
+
+  .hero-line {
+    margin-top: 45px;
+  }
+
+  .section {
+    padding: 75px 6%;
+  }
+
+  .section-title {
+    letter-spacing: -1.5px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .profile-card {
+    min-height: 300px;
+  }
+
+  .profile-card::before {
+    font-size: 140px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+
+  .skill-card {
+    padding: 20px 15px;
+  }
+
+  .skill-card h3 {
+    font-size: 17px;
+  }
+
+  .skill-card p {
+    font-size: 11px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual {
+    height: 190px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 22px 17px;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 6%;
+  }
+
+  .philosophy {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .back-top {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+@media(max-width: 360px) {
+
+  .hero-title {
+    font-size: 45px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-info {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal,
+  .reveal-left {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+  /* PROFILE PHOTO */
+
+.profile-card {
+  background:
+    radial-gradient(circle at center, #321010, #101010 70%);
+}
+
+.profile-card::before {
+  content: none;
+}
+
+.profile-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  opacity: .85;
+  transition: .6s;
+}
+
+.profile-card:hover .profile-photo {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 40%,
+    rgba(0,0,0,.9)
+  );
+  pointer-events: none;
+}
+
+.profile-caption {
+  z-index: 2;
+}
+
+  /* PREMIUM INTERACTION */
+
+::selection {
+  background: #ff3434;
+  color: #fff;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contact-item,
+.skill-card,
+.project-card {
+  will-change: transform;
+}
+
+.project-visual::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,52,52,.08);
+  filter: blur(60px);
+  transition: .5s;
+}
+
+.project-card:hover .project-visual::after {
+  background: rgba(255,52,52,.2);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+@media(max-width:650px) {
+  .profile-photo {
+    object-position: center 25%;
+  }
+
+  .contact-item {
+    min-width: 0;
+  }
+
+  .contact-item strong {
+    overflow-wrap: anywhere;
+  }
+}
+
+  .project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 11px 17px;
+  border: 1px solid var(--red);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.project-link:hover {
+  background: var(--red);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+  /* =================================
+   PROJECT SECTION
+================================= */
+
+.projects-section {
+  position: relative;
+  padding: 110px 8%;
+  overflow: hidden;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 45px;
+}
+
+/* PROJECT CARD */
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  padding: 30px;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    #171717,
+    #0d0d0d
+  );
+
+  border: 1px solid #292929;
+  border-radius: 14px;
+
+  transition:
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+/* RED DECORATION */
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--red);
+  transition: width .4s ease;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -70px;
+  bottom: -80px;
+
+  background: var(--red);
+  opacity: .07;
+  filter: blur(65px);
+  pointer-events: none;
+}
+
+/* HOVER */
+
+.project-card:hover {
+  transform: translateY(-9px);
+  border-color: var(--red);
+  box-shadow: 0 18px 45px rgba(255, 52, 52, .10);
+}
+
+.project-card:hover::before {
+  width: 100%;
+}
+
+/* PROJECT NUMBER */
+
+.project-number {
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 35px;
+  color: var(--red);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* PROJECT TITLE */
+
+.project-card h3 {
+  margin: 0 0 14px;
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -.7px;
+}
+
+/* PROJECT DESCRIPTION */
+
+.project-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* PROJECT LINK */
+
+.project-link {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: fit-content;
+  margin-top: auto;
+  padding: 12px 18px;
+
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--red);
+  border-radius: 5px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-decoration: none;
+
+  transition: .3s ease;
+}
+
+.project-link:hover {
+  color: #fff;
+  background: var(--red);
+  box-shadow: 0 5px 20px rgba(255, 52, 52, .25);
+  transform: translateY(-3px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card {
+    min-height: 280px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 80px 6%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .project-card {
+    min-height: 250px;
+    padding: 25px;
+  }
+
+  .project-number {
+    margin-bottom: 28px;
+  }
+
+  .project-card h3 {
+    font-size: 21px;
+  }
+
+  .project-link {
+    margin-top: 25px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card::before,
+  .project-link {
+    transition: none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#" class="logo">NAJIB<span>.</span></a>
+
+  <div class="nav-links">
+    <a href="#home">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#projects">Proyek</a>
+    <a href="#contact" class="nav-contact">Kontak ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-glow"></div>
+
+  <div class="hero-top">
+    <div class="status-dot"></div>
+    <span>Selamat datang di ruang kreatif saya</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span class="outline">M.</span><br>
+    AMINUN<br>
+    <span class="red">NAJIB.</span>
+  </h1>
+
+  <div class="hero-bottom">
+
+    <div class="hero-description">
+
+      <p>
+        Halo, saya <strong>M. Aminun Najib</strong>.
+        Seorang pelajar yang memiliki ketertarikan
+        besar pada dunia teknologi, kreativitas,
+        dan pengembangan digital.
+        Saya senang mempelajari hal baru dan
+        mengubah ide menjadi sesuatu yang nyata.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          LIHAT PROYEK ↗
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+          TENTANG SAYA
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-index">
+      <strong>01</strong>
+      <span>PERSONAL PORTFOLIO</span>
+    </div>
+
+  </div>
+
+  <div class="hero-line"></div>
+
+</section>
+
+  <!-- ABOUT -->
+<section class="section" id="about">
+
+  <div class="about-grid">
+
+<div class="profile-card">
+
+  <img
+    src="profile.png"
+    alt="Foto profil M. Aminun Najib"
+    class="profile-photo"
+    onerror="this.style.display='none'"
+  >
+
+  <div class="profile-caption">
+    <strong>M. AMINUN NAJIB</strong>
+    PERSONAL PROFILE
+  </div>
+
+</div>
+
+    <div>
+      <div class="section-label">01 / TENTANG SAYA</div>
+
+      <h2 class="section-title">
+        Mengenal <span>Saya.</span>
+      </h2>
+
+      <p class="section-desc">
+        Saya adalah seorang pelajar yang memiliki
+        ketertarikan pada dunia teknologi informasi,
+        pengembangan website, dan kreativitas digital.
+
+        <br><br>
+
+        Saya percaya bahwa kemampuan bukan hanya
+        tentang apa yang sudah dikuasai, tetapi juga
+        tentang kemauan untuk terus belajar,
+        mencoba, dan berkembang.
+      </p>
+
+      <div class="about-info">
+
+        <div class="info-item">
+          <small>NAMA</small>
+          <strong>M. Aminun Najib</strong>
+        </div>
+
+        <div class="info-item">
+          <small>STATUS</small>
+          <strong>Pelajar Aktif</strong>
+        </div>
+
+        <div class="info-item">
+          <small>MINAT</small>
+          <strong>Teknologi & IT</strong>
+        </div>
+
+        <div class="info-item">
+          <small>HOBI</small>
+          <strong>Futsal</strong>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section class="section skills-section" id="skills">
+
+  <div class="section-label">02 / KEMAMPUAN</div>
+
+  <h2 class="section-title">
+    Keahlian & <span>Minat.</span>
+  </h2>
+
+  <p class="section-desc">
+    Beberapa bidang yang sedang saya pelajari
+    dan kembangkan.
+  </p>
+
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-number">01 / WEB</div>
+      <h3>HTML</h3>
+      <p>Membangun struktur dan konten website.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-number">02 / DESIGN</div>
+      <h3>CSS</h3>
+      <p>Mengembangkan tampilan website yang menarik dan responsif.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-number">03 / LOGIC</div>
+      <h3>JavaScript</h3>
+      <p>Mempelajari logika dan interaksi pada website.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-number">04 / CREATIVE</div>
+      <h3>Kreativitas</h3>
+      <p>Mengembangkan ide menjadi konsep digital.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-number">05 / LEARNING</div>
+      <h3>Problem Solving</h3>
+      <p>Belajar menganalisis dan menyelesaikan masalah.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-number">06 / FUTURE</div>
+      <h3>Pengembangan IT</h3>
+      <p>Terus mengeksplorasi teknologi dan dunia digital.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+
+  <div class="section-label">03 / PORTOFOLIO</div>
+
+  <h2 class="section-title">
+    Proyek <span>Unggulan.</span>
+  </h2>
+
+  <p class="section-desc">
+    Beberapa karya dan proyek digital yang
+    saya bangun dalam perjalanan belajar.
+  </p>
+
+  <div class="projects-grid">
+
+<div class="project-card">
+  <div class="project-number">01 / FASHION</div>
+  <h3>NAFA.FASHION</h3>
+  <p>Platform fashion dan toko online.</p>
+  <a href="https://ultraman-supernn.github.io/NAFA-FASHION/"
+     target="_blank" rel="noopener noreferrer"
+     class="project-link">
+    Lihat Proyek ↗
+  </a>
+</div>
+
+<div class="project-card">
+  <div class="project-number">02 / PRODUCTIVITY</div>
+  <h3>PRODUKTIVITAS ME</h3>
+  <p>Website manajemen aktivitas dan produktivitas.</p>
+  <a href="https://ultraman-supernn.github.io/Personal-Website/"
+     target="_blank" rel="noopener noreferrer"
+     class="project-link">
+    Lihat Proyek ↗
+  </a>
+</div>
+
+<div class="project-card">
+  <div class="project-number">03 / FINANCE</div>
+  <h3>KEUANGAN ME</h3>
+  <p>Website pengelolaan tabungan dan keuangan pribadi.</p>
+  <a href="https://ultraman-supernn.github.io/Tabungan/"
+     target="_blank" rel="noopener noreferrer"
+     class="project-link">
+    Lihat Proyek ↗
+  </a>
+</div>
+
+  </div>
+</section>
+
+
+<!-- JOURNEY -->
+<section class="section journey" id="journey">
+
+  <div class="section-label">04 / PERJALANAN</div>
+
+  <h2 class="section-title">
+    Proses <span>Berkembang.</span>
+  </h2>
+
+  <p class="section-desc">
+    Setiap proyek adalah bagian dari proses
+    belajar dan pengembangan kemampuan.
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <small>AWAL PERJALANAN</small>
+      <h3>Mulai Mengenal Teknologi</h3>
+      <p>
+        Mengenal dunia teknologi informasi
+        dan mulai tertarik membuat sesuatu
+        menggunakan perangkat digital.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <small>TAHAP PEMBELAJARAN</small>
+      <h3>Mulai Mengembangkan Website</h3>
+      <p>
+        Mempelajari HTML, CSS, JavaScript,
+        serta membangun berbagai proyek
+        sederhana secara mandiri.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <small>TAHAP PENGEMBANGAN</small>
+      <h3>Membangun Proyek Digital</h3>
+      <p>
+        Mulai mengembangkan ide menjadi
+        proyek yang lebih kompleks dan
+        memiliki fungsi nyata.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <small>MASA DEPAN</small>
+      <h3>Terus Bertumbuh</h3>
+      <p>
+        Mengembangkan kemampuan, memperluas
+        pengalaman, dan menciptakan karya
+        digital yang bermanfaat.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PHILOSOPHY -->
+<section class="section philosophy">
+
+  <div class="section-label">05 / FILOSOFI</div>
+
+  <blockquote>
+    "Tidak harus menjadi yang paling hebat
+    hari ini, cukup menjadi
+    <span>lebih baik dari kemarin.</span>"
+  </blockquote>
+
+  <p>
+    TERUS BELAJAR. TERUS BERKARYA. TERUS BERKEMBANG.
+  </p>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+
+  <div class="section-label">06 / HUBUNGI SAYA</div>
+
+  <h2 class="section-title">
+    Mari Terhubung <span>Bersama.</span>
+  </h2>
+
+  <p class="section-desc">
+    Terbuka untuk diskusi, berbagi ide,
+    kolaborasi, dan kesempatan baru.
+  </p>
+
+  <div class="contact-grid">
+
+    <div class="contact-list">
+
+  <a class="contact-item" data-contact="email">
+    <div class="contact-icon">@</div>
+    <div>
+      <small>EMAIL</small>
+      <strong>captviinz@gmail.com</strong>
+    </div>
+  </a>
+
+  <a class="contact-item" data-contact="whatsapp">
+    <div class="contact-icon">W</div>
+    <div>
+      <small>WHATSAPP</small>
+      <strong>085810709538</strong>
+    </div>
+  </a>
+
+  <a class="contact-item" data-contact="instagram">
+    <div class="contact-icon">◎</div>
+    <div>
+      <small>INSTAGRAM</small>
+      <strong>ultraman_supernn</strong>
+    </div>
+  </a>
+
+  <a class="contact-item" data-contact="github">
+    <div class="contact-icon">⌘</div>
+    <div>
+      <small>GITHUB</small>
+      <strong>Ultraman_Supernn</strong>
+    </div>
+  </a>
+
+</div>
+
+
+    <form class="contact-form" id="contactForm">
+
+      <h3>Kirim Pesan.</h3>
+
+      <div class="form-group">
+        <label>Nama Anda</label>
+        <input
+          type="text"
+          id="senderName"
+          placeholder="Masukkan nama"
+          required
+          maxlength="60"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Email Anda</label>
+        <input
+          type="email"
+          id="senderEmail"
+          placeholder="nama@email.com"
+          required
+          maxlength="120"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Pesan</label>
+        <textarea
+          id="senderMessage"
+          placeholder="Tuliskan pesan Anda..."
+          required
+          maxlength="1500"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        KIRIM PESAN ↗
+      </button>
+
+      <p class="contact-note">
+        Formulir ini akan disambungkan ke layanan
+        pengiriman pesan pada tahap berikutnya.
+        Saat ini belum mengirimkan pesan secara otomatis.
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <a href="#" class="logo">
+    NAJIB<span>.</span>
+  </a>
+
+  <p>
+    © 2026 M. Aminun Najib.
+    Dibuat dengan semangat berkarya.
+  </p>
+
+  <p>PERSONAL PORTFOLIO</p>
+
+</footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+  // ==================================
+  // 1. KONFIGURASI KONTAK
+  // ==================================
+
+  const CONTACT = {
+    whatsapp: "", // Contoh: 6281234567890
+    email: "",
+    instagram: "", // Username Instagram
+    github: "" // Username GitHub
+  };
+
+  // ==================================
+  // 2. CUSTOM TOAST
+  // ==================================
+
+  function showToast(message) {
+    let toast = document.querySelector(".toast");
+
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "toast";
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toast.timer);
+    toast.timer = setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2800);
+  }
+
+  // ==================================
+  // 3. ANIMASI TYPING
+  // ==================================
+
+  const typingElement = document.querySelector(".typing-text");
+
+  if (typingElement) {
+    const words = [
+      "Web Developer.",
+      "Creative Thinker.",
+      "IT Enthusiast.",
+      "Future Developer."
+    ];
+
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+
+      if (deleting) {
+        charIndex--;
+      } else {
+        charIndex++;
+      }
+
+      typingElement.textContent =
+        currentWord.substring(0, charIndex);
+
+      let delay = deleting ? 55 : 100;
+
+      if (!deleting && charIndex === currentWord.length) {
+        deleting = true;
+        delay = 1300;
+      } else if (deleting && charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        delay = 350;
+      }
+
+      setTimeout(typeEffect, delay);
+    }
+
+    typeEffect();
+  }
+
+  // ==================================
+  // 4. ANIMASI SCROLL REVEAL
+  // ==================================
+
+  const revealElements = document.querySelectorAll(
+    ".reveal, .section-title, .section-label, .section-desc"
+  );
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("active");
+    });
+  }
+
+  // ==================================
+  // 5. STAGGER ANIMATION
+  // ==================================
+
+  document.querySelectorAll(
+    ".skill-card, .project-card, .timeline-item"
+  ).forEach((element, index) => {
+    element.style.transitionDelay =
+      `${(index % 5) * 100}ms`;
+  });
+
+  // ==================================
+  // 6. MOBILE NAVIGATION
+  // ==================================
+
+  const navbar = document.querySelector(".navbar");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (navbar && navLinks) {
+    let menuButton = document.querySelector(".menu-toggle");
+
+    if (!menuButton) {
+      menuButton = document.createElement("button");
+      menuButton.className = "menu-toggle";
+      menuButton.type = "button";
+      menuButton.setAttribute("aria-label", "Buka menu");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+      `;
+
+      navbar.appendChild(menuButton);
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("show");
+
+      menuButton.classList.toggle("active", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuButton.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // ==================================
+  // 7. TOMBOL BACK TO TOP
+  // ==================================
+
+  const backTop = document.querySelector(".back-top");
+
+  if (backTop) {
+    window.addEventListener("scroll", () => {
+      backTop.classList.toggle(
+        "show",
+        window.scrollY > 500
+      );
+    }, { passive: true });
+
+    backTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  // ==================================
+  // 8. KONFIGURASI LINK KONTAK
+  // ==================================
+
+  document.querySelectorAll("[data-contact]").forEach((link) => {
+    const type = link.dataset.contact;
+    const value = (CONTACT[type] || "").trim();
+
+    let url = "";
+
+    if (type === "whatsapp" && value) {
+      const number = value.replace(/\D/g, "");
+      if (number) url = `https://wa.me/${number}`;
+    }
+
+    if (type === "email" && value) {
+      url = `mailto:${value}`;
+    }
+
+    if (type === "instagram" && value) {
+      const username = value.replace(/^@/, "");
+      url = `https://instagram.com/${encodeURIComponent(username)}`;
+    }
+
+    if (type === "github" && value) {
+      const username = value.replace(/^@/, "");
+      url = `https://github.com/${encodeURIComponent(username)}`;
+    }
+
+    if (url) {
+      link.href = url;
+      link.removeAttribute("aria-disabled");
+    } else {
+      link.removeAttribute("href");
+      link.setAttribute("aria-disabled", "true");
+    }
+  });
+
+  // ==================================
+  // 9. FORM KONTAK WHATSAPP
+  // ==================================
+
+  const contactForm = document.querySelector("#contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = contactForm.querySelector(
+        '[name="name"]'
+      )?.value.trim();
+
+      const email = contactForm.querySelector(
+        '[name="email"]'
+      )?.value.trim();
+
+      const message = contactForm.querySelector(
+        '[name="message"]'
+      )?.value.trim();
+
+      if (!name || !email || !message) {
+        showToast("Lengkapi semua kolom terlebih dahulu.");
+        return;
+      }
+
+      if (!CONTACT.whatsapp) {
+        showToast("Nomor WhatsApp belum diatur.");
+        return;
+      }
+
+      const number = CONTACT.whatsapp.replace(/\D/g, "");
+
+      if (!number) {
+        showToast("Nomor WhatsApp belum valid.");
+        return;
+      }
+
+      const text = [
+        "Halo, saya ingin menghubungi Anda.",
+        "",
+        `Nama: ${name}`,
+        `Email: ${email}`,
+        "",
+        "Pesan:",
+        message
+      ].join("\n");
+
+      const url =
+        `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+
+      window.location.assign(url);
+    });
+  }
+
+  // ==================================
+  // 10. TAHUN OTOMATIS
+  // ==================================
+
+  const yearElement = document.querySelector("#year");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+});
+  </script>
+</body>
+</html>
